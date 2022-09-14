@@ -78,7 +78,6 @@ window.onload = function()
             // Dessine la pomme
             applee.draw();
             
-
             // la function refreshCanvas met à jour le canvas toutes les 1s
             // ce qui permet de faire 'avancer' le serpent toute les 1s
             timeout = setTimeout(refreshCanvas, delay);
@@ -165,7 +164,7 @@ window.onload = function()
             ctx.save();
             ctx.fillStyle = "#ff0000";
 
-            // permet de 'passer sur tous les blocks, block = corps du serpent
+            // permet de 'passer' sur tous les blocks, block = corps du serpent
             for(var i = 0; i < this.body.length; i++){
                 drawBlock(ctx,this.body[i]);
             }
@@ -320,7 +319,7 @@ window.onload = function()
         this.setNewPosition = function(){
             // Math.round -> chiffre entier, Math.random -> chiffre aléatoire
             var newX = Math.round(Math.random() * (widthInBlocks - 1));
-            var newY = Math.round(Math.random() * (heightInBlocks - 1));
+            var newY = Math.round(Math.random() * (heightInBlocks - 0));
             // donner la nouvelle position a la pomme
             this.position = [newX, newY];
         };
@@ -337,7 +336,6 @@ window.onload = function()
             }
         };
     }
-
 
     // onkeydown -> quand l'utilisateur appuie sur une touche du clavier
     // e -> évènement
